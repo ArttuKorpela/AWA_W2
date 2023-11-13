@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
-app.use(express.json())
 const port = 3000;
+const path = require("path");
+
+
+app.use(express.json())
+
 
 let json = {
     msg: "Hello world"
@@ -34,6 +38,10 @@ app.post("/sum",(req,res) => {
         sum: sum
     })
 })
+
+app.use(express.static(path.join(__dirname,"static")));
+
+
 
 app.listen(port, ()=> console.log('listening port:' + port));
 
