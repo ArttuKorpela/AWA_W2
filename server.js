@@ -7,7 +7,7 @@ let json = {
     msg: "Hello world"
 };
 
-app.get('/',(req,res) => {
+app.get('/hello',(req,res) => {
 
     //res.send(JSON.stringify(json));
 
