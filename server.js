@@ -6,6 +6,8 @@ const path = require("path");
 
 app.use(express.json())
 
+let listOfItems = [];
+
 
 let json = {
     msg: "Hello world"
@@ -26,6 +28,17 @@ app.get("/echo/:id",(req,res) => {
     })
 })
 
+
+app.post("/list",(req,res)=> {
+    toBeAddedToList = (req.body.text)
+
+    listOfItems.push(toBeAddedToList);
+
+    res.json({
+        list: listOfItems
+    });
+
+})
 
 app.post("/sum",(req,res) => {
     let numbers = req.body.numbers;
